@@ -1,11 +1,7 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 
-class App extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      items: [
+const products = [
               {id: 0,
               name: 'Optimus Prime',
               price: 10000,
@@ -21,15 +17,34 @@ class App extends Component {
               {id: 3,
               name: 'Starscream',
               price: 4000,
-              url: 'http://static.zerochan.net/Starscream.full.636078.jpg'}],
+              url: 'http://static.zerochan.net/Starscream.full.636078.jpg'}]
+
+class App extends Component {
+  constructor(props) {
+    super(props)
+    this.addToCart = this.addToCart.bind(this)
+    this.removeItem = this.removeItem.bind(this)
+    this.state = {
       cart: []
     }
+  }
+
+  addToCart(item) {
+    let cart = this.state.cart
+    cart.push(item)
+    this.setState({cart: cart})
+  }
+
+  removeItem(index) {
+    let cart = this.state.cart
+    let removed = cart.splice(index, 1)
+    this.setState({cart: cart})
   }
 
   render() {
     return (
       <div>
-        <Cart items={ this.state.cart }/>
+        <Cart items={ this.state.cart } removeItem={ this.removeItem } />
       </div>
       )
   }
