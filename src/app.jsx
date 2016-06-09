@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import Cart from './components/cart.jsx'
-import Navbar from './components/navbar.jsx'
-import Shop from './components/shop.jsx'
+import ShopContainer from './components/shop-container.jsx'
 import Home from './home.jsx'
 
 const products = [
@@ -75,11 +73,11 @@ class App extends Component {
           <Home enterSite={ this.enterSite }/>
         </div> :
         <div>
-          <Navbar/>
-          <Shop
-            shopItems={ shopItems }
-            addToCart={ this.addToCart.bind(this) } />
-          <Cart items={ this.state.cart } removeItem={ this.removeItem } />
+          <ShopContainer
+              shopItems={ shopItems }
+              addToCart={ this.addToCart }
+              removeItem={ this.removeItem }
+              cartItems={ this.state.cart } />
         </div>
       }
       </div>
