@@ -16,6 +16,14 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/public/index.html')
 })
 
+app.get('/api/products', (req, res) => {
+  console.log('GET /api/products')
+  db.getProducts()
+    .then((products) => {
+      res.json(products)
+    })
+})
+
 server.listen(3000, () => {
   console.log('Server is listening on port 3000')
 })
