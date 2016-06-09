@@ -10,9 +10,10 @@ export default class Shop extends React.Component {
     return (
       <div className="shop">
         <Title id='shop-title' title='A most grand selection of ponies' />
-        <Shelf addToCart={this.props.addToCart} theseItems={this.props.shopItems}/>
+        <Shelf addToCart={this.props.addToCart}
+               updateCurrentItem={ this.props.updateCurrentItem }
+               theseItems={this.props.shopItems} />
       </div>
-
     )
   }
 };

@@ -11,7 +11,10 @@ export default class Shelf extends React.Component {
       <div className="shop-shelf">
         {
           this.props.theseItems.map((item, i) => {
-            return <Item addToCart={this.props.addToCart} itemDetails={item} index={i}/>
+            return <Item addToCart={this.props.addToCart}
+                          updateCurrentItem={ this.props.updateCurrentItem }
+                          itemDetails={item}
+                          index={i}/>
           })
         }
 
