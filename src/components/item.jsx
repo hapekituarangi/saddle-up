@@ -1,12 +1,22 @@
-import React from "react";
+import React from "react"
+import MoreDetails from './more-details.jsx'
 
 console.log("item is loaded")
 
 export default class Item extends React.Component {
+  constructor(props) {
+    super(props)
+    this.handleMoredetails = this.handleMoredetails.bind(this)
+    this.state = {clicked: false}
+  }
 
-  handleClick () {
-    this.props.addToCart
+  handleMoredetails() {
+    this.setState({clicked: true})
+    console.log('More DEEEEEEETAILS')
+  }
 
+  noDetails() {
+    this.setState({clicked: false})
   }
 
   render () {
@@ -14,9 +24,24 @@ export default class Item extends React.Component {
 
     return (
       <div className="shop-item">
-        <img src={itemDetails.url}/>
-        <p>{itemDetails.name}</p>
-        <button handleClick={this.handleClick} >Buy</button>
+        <div className='img-deets'>
+          <img src={itemDetails.url} className='item-img'/>
+          <div className='item-deets'>
+            <div>NAME: <p>{itemDetails.name}</p></div>
+            <div>PRICE: <p>${ itemDetails.price }</p></div>
+            <div className='more-details'><p onClick={ this.handleMoredetails }>More details</p></div>
+          </div>
+        </div>
+          {
+            this.state.clicked ?
+              <MoreDetails
+                  details={ itemDetails }
+                  noDetails={ this.noDetails.bind(this) }
+                  addToCart={ this.props.addToCart }
+                  updateCurrentItem={ this.props.updateCurrentItem }
+                  item={ itemDetails } />
+                : null
+            }
       </div>
     )
    }

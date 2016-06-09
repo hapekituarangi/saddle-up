@@ -13,9 +13,14 @@ class TableRow extends Component {
   render() {
     return (
       <tr>
-        <td>{ this.props.name }</td>
-        <td>{ this.props.price }</td>
-        <td onClick={ this.handleClick }>Remove</td>
+        <td>
+          <div className='checkout-item'>
+            <p>{ this.props.name }</p>
+            <img className='checkout-img' src={ this.props.url } />
+          </div>
+        </td>
+        <td>${ this.props.price }</td>
+        <td onClick={ this.handleClick } id='remove'>X</td>
       </tr>
       )
   }
