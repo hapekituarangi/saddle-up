@@ -16,7 +16,8 @@ export default class Item extends React.Component {
       <div className="shop-item">
         <img src={itemDetails.url}/>
         <p>{itemDetails.name}</p>
-        <button handleClick={this.handleClick} >Buy</button>
+        <button classNamehandleClick={this.handleClick} >Buy</button>
+        <button handleClick={this.handleClick} >Rent</button>
       </div>
     )
    }

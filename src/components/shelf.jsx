@@ -8,6 +8,7 @@ export default class Shelf extends React.Component {
   render() {
 
     var shopItems = this.props.theseItems
+    console.log(shopItems, "shopitems in shelf")
 
     return (
       <div className="shop-shelf">
