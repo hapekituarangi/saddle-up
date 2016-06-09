@@ -9,7 +9,7 @@ export default class Shop extends React.Component {
   render() {
     return (
       <div className="shop">
-        <Title title='A most grand selection of ponies' />
+        <Title id='shop-title' title='A most grand selection of ponies' />
         <Shelf addToCart={this.props.addToCart} theseItems={this.props.shopItems}/>
       </div>
 
