@@ -1,0 +1,38 @@
+import React, { Component } from 'react'
+import ReactDOM from 'react-dom'
+
+class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      items: [
+              {id: 0,
+              name: 'Optimus Prime',
+              price: 10000,
+              url: 'http://tfwiki.net/mediawiki/images2/thumb/3/37/Optimusg1.jpg/350px-Optimusg1.jpg'},
+              {id: 1,
+              name: 'Megatron',
+              price: 8000,
+              url: 'http://img11.deviantart.net/a55f/i/2011/025/b/5/megatron_g1_by_alexdobson-d380thy.jpg'},
+              {id: 2,
+              name: 'Bumblebee',
+              price: 4000,
+              url: 'http://vignette2.wikia.nocookie.net/transformers/images/b/bf/Wfc-bumblebee-1.jpg/revision/latest?cb=20111031135557'},
+              {id: 3,
+              name: 'Starscream',
+              price: 4000,
+              url: 'http://static.zerochan.net/Starscream.full.636078.jpg'}],
+      cart: []
+    }
+  }
+
+  render() {
+    return (
+      <div>
+        <Cart items={ this.state.cart }/>
+      </div>
+      )
+  }
+}
+
+ReactDOM.render(<App />, document.getElementById('app'))
