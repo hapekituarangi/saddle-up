@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import CartTable from './cart-table.jsx'
 
 class Cart extends Component {
   constructor(props) {

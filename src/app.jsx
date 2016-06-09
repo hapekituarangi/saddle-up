@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
+import Cart from './components/cart.jsx'
 import Navbar from ''
 
 items: [
@@ -47,4 +48,5 @@ class App extends Component {
   }
 }
 
+console.log('Saddling up.')
 ReactDOM.render(<App />, document.getElementById('app'))
