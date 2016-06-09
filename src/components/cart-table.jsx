@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import TableRow from './table-row.jsx'
 
 class CartTable extends Component {
   constructor(props) {
@@ -10,11 +11,12 @@ class CartTable extends Component {
       <div id='cart-table'>
         <table>
           {
-            this.props.items.forEach( (item) => {
-              return (<tr>
-                      <td>{ item.name }</td>
-                      <td>{ item. price }</td>
-                     </tr>)
+            this.props.items.forEach( (item, i) => {
+              return <TableRow
+                        name={ item.name }
+                        price={ item.price }
+                        removeItem={ this.props.removeItem }
+                        id={ i } />
             })
           }
         </table>

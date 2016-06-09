@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import CartTable from './cart-table.jsx'
+import Title from './title.jsx'
+import Shelf from './shelf.jsx'
 
 class Cart extends Component {
   constructor(props) {
@@ -8,10 +11,10 @@ class Cart extends Component {
   render() {
     return (
       <div id='cart'>
-        <Title />
+        <Title title='Shopping Cart' />
         <div >
-          <CartTable items={ this.props.items } />
-          <Upsell />
+          <CartTable items={ this.props.items } removeItem={ this.props.removeItem }/>
+          <Shelf items={} />
         </div>
       </div>
       )
