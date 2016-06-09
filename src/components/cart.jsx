@@ -10,10 +10,12 @@ class Cart extends Component {
       <div id='cart'>
         <Title />
         <div >
-          <CartTable />
+          <CartTable items={ this.props.items } />
           <Upsell />
         </div>
       </div>
       )
   }
 }
+
+export default Cart
