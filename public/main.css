@@ -117,6 +117,17 @@ berkshire swash*/
 
 .add-ons, .addOn {
   display: flex;
+  padding: 20px;
+  justify-content: space-around;
+}
+
+.addOn img {
+  height: 150px;
+  border-radius: 4px;
+}
+
+.addOn .text {
+  margin-left: 10px;
 }
 
 /* Checkout table styling */

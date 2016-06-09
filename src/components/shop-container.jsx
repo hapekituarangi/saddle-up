@@ -7,10 +7,10 @@ import ConfirmAddCart from  './confirm-add-cart.jsx'
 const buyAddOns = [
                 {type: 'Chocolate',
                 price: 5.00,
-                url: ''},
+                url: 'http://www.mexatk.com/wp-content/uploads/2016/03/%D8%B5%D9%88%D8%B1-%D8%B4%D9%88%D9%83%D9%88%D9%84%D8%A7%D8%AA%D9%87-3.jpg'},
                 {type: 'Champagne',
                 price: 90.00,
-                url: ''}
+                url: 'http://www.pd4pic.com/images/-champagne-sparkling-wine-bottle-wine-feast-festive.png'}
                 ]
 const rentAddOns = [
                 {type: 'Reins',

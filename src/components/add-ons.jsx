@@ -11,9 +11,10 @@ class AddOns extends Component {
           this.props.addOns.map( (item) => {
             return <div className='addOn'>
                     <img src={ item.url } />
-                    <div>
+                    <div className='text'>
                       <h3>{ item.type }</h3>
                       <p>Price: { item.price }</p>
+                      <button>Add to cart</button>
                     </div>
                   </div>
                 })
