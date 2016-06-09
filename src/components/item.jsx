@@ -25,16 +25,23 @@ export default class Item extends React.Component {
     return (
       <div className="shop-item">
         <img src={itemDetails.url} className='item-img'/>
-        <p>{itemDetails.name}</p>
-        <p>{ itemDetails.price }</p>
-        <p onClick={ this.handleMoredetails }>More details</p>
-        {
-          this.state.clicked ?
-              <p className='pony-details'>{ itemDetails.description }</p>
-
-              : null
-          }
-        <button onClick={this.handleBuy} >Buy</button>
+        <div className='item-deets'>
+          <div>NAME: <p>{itemDetails.name}</p></div>
+          <div>PRICE: <p>${ itemDetails.price }</p></div>
+          <div className='more-details'><p onClick={ this.handleMoredetails }>More details</p></div>
+          {
+            this.state.clicked ?
+              <div className='pony-details'>
+                <div>BREED: <p>{ itemDetails.breed }</p></div>
+                <div>AGE: <p>{ itemDetails.age }</p></div>
+                <p>{ itemDetails.description }</p>
+              </div>
+                : null
+            }
+        </div>
+        <div>
+          <button onClick={this.handleBuy} >Buy</button>
+        </div>
       </div>
     )
    }
