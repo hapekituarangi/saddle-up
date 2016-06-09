@@ -14,11 +14,10 @@ export default class Item extends React.Component {
 
     return (
       <div className="shop-item">
-        <img src={itemDetails.url}>
+        <img src={itemDetails.url}/>
         <p>{itemDetails.name}</p>
         <button handleClick={this.handleClick} >Buy</button>
       </div>
-
     )
    }
 };

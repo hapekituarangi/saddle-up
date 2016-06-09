@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import Cart from './components/cart.jsx'
-import Navbar from ''
+import Navbar from './components/navbar.jsx'
+import Shop from './components/shop.jsx'
 
 const products = [
               {id: 0,

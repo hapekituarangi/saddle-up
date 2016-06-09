@@ -1,7 +1,7 @@
 import React from "react";
 import Login from "./login.jsx"
-import WelcomeUser from "./welcomeUser"
-import CartCounter from "./cartCounter"
+import WelcomeUser from "./welcomeUser.jsx"
+import CartCounter from "./cartCounter.jsx"
 
 console.log("navbar is loaded")
 

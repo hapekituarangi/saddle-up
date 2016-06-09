@@ -16,7 +16,7 @@ class TableRow extends Component {
         <td>{ this.props.name }</td>
         <td>{ this.props.price }</td>
         <td onClick={ this.handleClick }>Remove</td>
-      </tr>)
+      </tr>
       )
   }
 }

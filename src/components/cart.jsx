@@ -15,7 +15,7 @@ class Cart extends Component {
         <Title title='Shopping Cart' />
         <div >
           <CartTable items={ this.props.items } removeItem={ this.props.removeItem }/>
-          <Shelf items={} />
+          <Shelf items={ null } />
         </div>
       </div>
       )
