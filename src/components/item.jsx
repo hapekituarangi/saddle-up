@@ -24,13 +24,13 @@ export default class Item extends React.Component {
 
     return (
       <div className="shop-item">
-        <img src={itemDetails.url} className='item-image'/>
+        <img src={itemDetails.url} className='item-img'/>
         <p>{itemDetails.name}</p>
         <p>{ itemDetails.price }</p>
         <p onClick={ this.handleMoredetails }>More details</p>
         {
           this.state.clicked ?
-              <p>PONIES ARE COOL{ itemDetails.description }</p>
+              <p className='pony-details'>{ itemDetails.description }</p>
 
               : null
           }

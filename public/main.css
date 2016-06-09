@@ -1,18 +1,95 @@
 body {
+  padding: 15%;
+  font-family: sans-serif;
+  background-image: url('http://science-all.com/images/wallpapers/hd-galaxy-wallpaper/hd-galaxy-wallpaper-23.jpg');
+  background-size: contain;
+  background-position: fixed;
+  color: #fff;
+}
 
+h2 {
+  font-size: 40px;
 }
 
 /* Shop components' style */
 .shop {
-  display: flex;
-  align-content: center;
+  text-align: left;
+  margin-bottom: 35%;
 }
 
 .shop-shelf {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 
-.item-image {
+.item-img {
   height: 300px;
+  border-radius: 4px;
+}
+
+.shop-item {
+  width: 250px;
+}
+
+.pony-details {
+  color: #751296;
+  padding: 15px;
+  word-break: normal;
+  border-radius: 4px;
+  background-color: rgba(256, 256, 256, .9);
+
+}
+
+
+/* Checkout table styling */
+#cart {
+  margin-bottom: 300px;
+}
+
+.checkout-img {
+  height: 100px;
+}
+
+.checkout-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+table, th, td {
+  color: #751296;
+  border: 2px solid #ddd;
+  text-align: left;
+  background-color: rgba(256, 256, 256, .3)
+}
+
+table {
+  border-collapse: collapse;
+  width: 60%;
+}
+
+th, td {
+  padding: 30px;
+}
+
+th {
+  font-size: 25px;
+}
+
+td {
+  font-size: 30px;
+}
+
+#remove {
+  text-align: center;
+  width: 40px;
+  color: #751296;
+}
+
+button {
+  color:#751296;
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #fff;
+  border: 2px solid #777;
+  border-radius: 4px;
 }

@@ -8,19 +8,23 @@ const products = [
               {id: 0,
               name: 'Optimus Prime',
               price: 10000,
-              url: 'http://tfwiki.net/mediawiki/images2/thumb/3/37/Optimusg1.jpg/350px-Optimusg1.jpg'},
+              url: 'http://tfwiki.net/mediawiki/images2/thumb/3/37/Optimusg1.jpg/350px-Optimusg1.jpg',
+              description: 'Optimus Prime is the leader of all the ponies. He is wise and kind, but ruthless when he needs to be. He is great with children.'},
               {id: 1,
               name: 'Megatron',
               price: 8000,
-              url: 'http://img11.deviantart.net/a55f/i/2011/025/b/5/megatron_g1_by_alexdobson-d380thy.jpg'},
+              url: 'http://img11.deviantart.net/a55f/i/2011/025/b/5/megatron_g1_by_alexdobson-d380thy.jpg',
+              description: 'Megatron can be a bit temperatmental so is only recommended for experienced riders. In saying that, if you give him a good scratch then he will destroy the world for you.'},
               {id: 2,
               name: 'Bumblebee',
               price: 4000,
-              url: 'http://vignette2.wikia.nocookie.net/transformers/images/b/bf/Wfc-bumblebee-1.jpg/revision/latest?cb=20111031135557'},
+              url: 'http://vignette2.wikia.nocookie.net/transformers/images/b/bf/Wfc-bumblebee-1.jpg/revision/latest?cb=20111031135557',
+              description: 'Bumblebee has a delightful personality and can always be relied upon to go the extra mile for you. Which is really good when travelling by pony.'},
               {id: 3,
               name: 'Starscream',
               price: 4000,
-              url: 'http://static.zerochan.net/Starscream.full.636078.jpg'}]
+              url: 'http://static.zerochan.net/Starscream.full.636078.jpg',
+              description: 'Starscream is a real handful. You will need to be extrememly firm with him if you are to control him. Also thinks he can fly, which is mildly terrifying.'}]
 
 class App extends Component {
   constructor(props) {
@@ -36,6 +40,7 @@ class App extends Component {
     let cart = this.state.cart
     cart.push(item)
     this.setState({cart: cart})
+    console.log(this.state.cart)
   }
 
   removeItem(index) {
