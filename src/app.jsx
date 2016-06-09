@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import ShopContainer from './components/shop-container.jsx'
+import Navbar from './components/navbar.jsx'
 import Home from './home.jsx'
 
 const products = [
@@ -39,6 +40,7 @@ class App extends Component {
     this.addToCart = this.addToCart.bind(this)
     this.removeItem = this.removeItem.bind(this)
     this.enterSite = this.enterSite.bind(this)
+    this.doLoggingIn = this.doLoggingIn.bind(this)
     this.state = {
       cart: [],
       home: true
@@ -49,7 +51,11 @@ class App extends Component {
     console.log("in the addtocart function")
     let cart = this.state.cart
     cart.push(item)
-    this.setState({cart: cart, home: false})
+    this.setState({
+      cart: cart,
+      home: false,
+      loggedIn: false
+    })
     console.log(this.state.cart)
 
   }
@@ -64,6 +70,11 @@ class App extends Component {
     this.setState({cart: [], home: false})
   }
 
+  doLoggingIn () {
+
+    console.log('trying to log in')
+  }
+
   render() {
     var shopItems = products
 
@@ -75,6 +86,10 @@ class App extends Component {
           <Home enterSite={ this.enterSite }/>
         </div> :
         <div>
+          <Navbar
+            loggedIn={ this.state.loggedIn }
+            doLoggingIn={ this.doLoggingIn }
+            numberOfCartItems={ this.state.cart }/>
           <ShopContainer
               shopItems={ shopItems }
               addToCart={ this.addToCart }
