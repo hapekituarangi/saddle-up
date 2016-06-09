@@ -1,0 +1,11 @@
+
+/* Shop components' style */
+.shop {
+  display: flex;
+  align-content: center;
+}
+
+.shop-shelf {
+  display: flex;
+  justify-content: center;
+}
