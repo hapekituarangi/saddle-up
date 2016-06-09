@@ -3,6 +3,7 @@ import CartTable from './cart-table.jsx'
 import Title from './title.jsx'
 import Shelf from './shelf.jsx'
 
+
 class Cart extends Component {
   constructor(props) {
     super(props)

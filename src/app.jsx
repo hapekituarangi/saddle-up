@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
+import Cart from './components/cart.jsx'
+import Navbar from ''
 
 const products = [
               {id: 0,
@@ -42,12 +44,19 @@ class App extends Component {
   }
 
   render() {
+    var shopItems = products
+
     return (
       <div>
+        <Navbar/>
+        <Shop
+          shopItems={ shopItems }
+          addToCart={ this.addToCart.bind(this) } />
         <Cart items={ this.state.cart } removeItem={ this.removeItem } />
       </div>
       )
   }
 }
 
+console.log('Saddling up.')
 ReactDOM.render(<App />, document.getElementById('app'))
