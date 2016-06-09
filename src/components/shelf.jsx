@@ -7,8 +7,6 @@ export default class Shelf extends React.Component {
 
   render() {
 
-
-
     return (
       <div className="shop-shelf">
         {

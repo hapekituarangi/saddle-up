@@ -2,7 +2,7 @@ import React from "react";
 import Shelf from "./shelf.jsx"
 import Title from './title.jsx'
 
-console.log("shop-shelf is loaded")
+console.log("shop is loaded")
 
 export default class Shop extends React.Component {
 
