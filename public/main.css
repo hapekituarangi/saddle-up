@@ -11,6 +11,42 @@ h2 {
   font-size: 40px;
 }
 
+/*home page styles */
+#homepage {
+  width: 50%;
+  margin: auto;
+  font-size: 50px;
+  text-align: center;
+  margin-top: 20%;
+  border: 2px dashed #fff;
+  border-radius: 4px;
+  -moz-transform: rotate(10deg);
+  -webkit-transform: rotate(10deg);
+  transform: rotate(10deg);
+}
+
+#homepage h1 {
+  font-family: 'Fredericka the Great', cursive;
+}
+
+#home-btn {
+  color: #fff;
+  background-color: transparent;
+  font-size: 30px;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  padding: 20px;
+  margin-bottom: 5%;
+}
+
+/*Rochester
+amatic SC
+bangers
+fredericka the great
+cabin sketch
+berkshire swash*/
+
+
 /* Shop components' style */
 .shop {
   text-align: left;
@@ -116,4 +152,8 @@ button {
   background-color: #fff;
   border: 2px solid #751296;
   border-radius: 4px;
+}
+
+button:hover, .more-details:hover {
+  cursor: pointer;
 }

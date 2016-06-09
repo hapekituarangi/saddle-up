@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import Cart from './components/cart.jsx'
 import Navbar from './components/navbar.jsx'
 import Shop from './components/shop.jsx'
+import Home from './home.jsx'
 
 const products = [
               {id: 0,
@@ -39,22 +40,28 @@ class App extends Component {
     super(props)
     this.addToCart = this.addToCart.bind(this)
     this.removeItem = this.removeItem.bind(this)
+    this.enterSite = this.enterSite.bind(this)
     this.state = {
-      cart: []
+      cart: [],
+      home: true
     }
   }
 
   addToCart(item) {
     let cart = this.state.cart
     cart.push(item)
-    this.setState({cart: cart})
+    this.setState({cart: cart, home: false})
     console.log(this.state.cart)
   }
 
   removeItem(index) {
     let cart = this.state.cart
     let removed = cart.splice(index, 1)
-    this.setState({cart: cart})
+    this.setState({cart: cart, home: false})
+  }
+
+  enterSite() {
+    this.setState({cart: [], home: false})
   }
 
   render() {
@@ -62,11 +69,19 @@ class App extends Component {
 
     return (
       <div>
-        <Navbar/>
-        <Shop
-          shopItems={ shopItems }
-          addToCart={ this.addToCart.bind(this) } />
-        <Cart items={ this.state.cart } removeItem={ this.removeItem } />
+      {
+        this.state.home ?
+        <div>
+          <Home enterSite={ this.enterSite }/>
+        </div> :
+        <div>
+          <Navbar/>
+          <Shop
+            shopItems={ shopItems }
+            addToCart={ this.addToCart.bind(this) } />
+          <Cart items={ this.state.cart } removeItem={ this.removeItem } />
+        </div>
+      }
       </div>
       )
   }
