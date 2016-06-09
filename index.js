@@ -4,6 +4,7 @@ import express from 'express'
 import http from 'http'
 import passport from 'passport'
 import FaceBookStrategy from 'passport-facebook'
+import db from './db/db'
 
 const app = express()
 const server = http.createServer(app)
