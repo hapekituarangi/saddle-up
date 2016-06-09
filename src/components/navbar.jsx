@@ -9,16 +9,17 @@ export default class Navbar extends React.Component {
 
     render() {
 
+
         return(
             <div className="navbar" >
               <WelcomeUser
                 loggedIn={ this.props.loggedIn }/>
               <CartCounter
-                numberOfCartItems={ this.props.numberOfCartItems } />
+                numberOfCartItems={ this.props.numberOfCartItems }
+                areThereItemsInCart={this.props.areThereItemsInCart} />
               <Login
                 loggedIn={ this.props.loggedIn }  />
             </div>
-
         )
     }
 };

@@ -43,6 +43,7 @@ class App extends Component {
     this.doLoggingIn = this.doLoggingIn.bind(this)
     this.state = {
       cart: [],
+      areThereItemsInCart: false,
       home: true
     }
   }
@@ -53,6 +54,7 @@ class App extends Component {
     cart.push(item)
     this.setState({
       cart: cart,
+      areThereItemsInCart: true,
       home: false,
       loggedIn: false
     })
@@ -84,12 +86,12 @@ class App extends Component {
         this.state.home ?
         <div>
           <Home enterSite={ this.enterSite }/>
-        </div> :
-        <div>
+        </div> : <div>
           <Navbar
             loggedIn={ this.state.loggedIn }
             doLoggingIn={ this.doLoggingIn }
-            numberOfCartItems={ this.state.cart }/>
+            numberOfCartItems={ this.state.cart }
+            areThereItemsInCart={this.state.areThereItemsInCart}/>
           <ShopContainer
               shopItems={ shopItems }
               addToCart={ this.addToCart }

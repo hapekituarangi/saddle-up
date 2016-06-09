@@ -162,3 +162,10 @@ button {
 button:hover, .more-details:hover {
   cursor: pointer;
 }
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+
+}
+
