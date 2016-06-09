@@ -2,6 +2,8 @@
 
 import express from 'express'
 import http from 'http'
+import passport from 'passport'
+import FaceBookStrategy from 'passport-facebook'
 
 const app = express()
 const server = http.createServer(app)
