@@ -1,14 +1,195 @@
 body {
-
+  padding: 5% 15%;
+  font-family: sans-serif;
+  background-image: url('http://science-all.com/images/wallpapers/hd-galaxy-wallpaper/hd-galaxy-wallpaper-23.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  color: #fff;
 }
+
+h2 {
+  font-size: 40px;
+}
+
+/*home page styles */
+#homepage {
+  width: 50%;
+  margin: auto;
+  font-size: 50px;
+  text-align: center;
+  margin-top: 10%;
+  border: 2px dashed #fff;
+  border-radius: 4px;
+  -moz-transform: rotate(10deg);
+  -webkit-transform: rotate(10deg);
+  transform: rotate(10deg);
+}
+
+#homepage h1 {
+  font-family: 'Fredericka the Great', cursive;
+}
+
+#home-btn {
+  color: #fff;
+  background-color: transparent;
+  font-size: 30px;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  padding: 20px;
+  margin-bottom: 5%;
+}
+
+/*Rochester
+amatic SC
+bangers
+fredericka the great
+cabin sketch
+berkshire swash*/
+
 
 /* Shop components' style */
 .shop {
-  display: flex;
-  align-content: center;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  margin-bottom: 40%;
 }
 
 .shop-shelf {
-  display: flex;
-  justify-content: center;
+  height: 100%;
 }
+
+.shop-item {
+  width: 100%;
+  height: 25%;
+  margin: 20px 0;
+  border: 2px solid #fff;
+  border-radius: 4px;
+}
+
+.item-img {
+  height: 200px;
+  border-radius: 4px;
+}
+
+.img-deets {
+  display: flex;
+}
+
+.item-deets {
+  font-size: 2rem;
+  padding: 15px;
+  margin: 0 20px;
+}
+
+.item-deets p {
+  display: inline;
+}
+
+.more-details {
+  font-size: 1.5rem;
+  text-decoration: underline;
+  padding: 15px;
+  margin-top: 30px;
+}
+
+.pony-details {
+  font-size: 1rem;
+  color: #751296;
+  padding: 15px 30px;
+  word-break: normal;
+  border-radius: 4px;
+  background-color: rgba(256, 256, 256, .9);
+}
+
+#no-details {
+  float: right;
+}
+
+/* Confirm Add */
+#confirm-add-cart {
+  margin-bottom: 40%;
+}
+
+#confirm-btns {
+  text-align: center;
+}
+
+.add-ons, .addOn {
+  display: flex;
+  padding: 20px;
+  justify-content: space-around;
+}
+
+.addOn img {
+  height: 150px;
+  border-radius: 4px;
+}
+
+.addOn .text {
+  margin-left: 10px;
+}
+
+/* Checkout table styling */
+#cart {
+  margin-bottom: 300px;
+}
+
+.checkout-img {
+  height: 100px;
+}
+
+.checkout-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+table, th, td {
+  color: #751296;
+  border: 2px solid #ddd;
+  text-align: left;
+  background-color: rgba(256, 256, 256, .3)
+}
+
+table {
+  border-collapse: collapse;
+  width: 60%;
+}
+
+th, td {
+  padding: 30px;
+}
+
+th {
+  font-size: 25px;
+}
+
+td {
+  font-size: 30px;
+}
+
+#remove {
+  text-align: center;
+  width: 40px;
+  color: #751296;
+}
+
+button {
+  color:#751296;
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #fff;
+  border: 2px solid #751296;
+  border-radius: 4px;
+}
+
+button:hover, .more-details:hover {
+  cursor: pointer;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+
+}
+

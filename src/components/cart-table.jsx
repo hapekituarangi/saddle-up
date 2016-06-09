@@ -7,21 +7,31 @@ class CartTable extends Component {
   }
 
   render() {
-    return (
-      <div id='cart-table'>
-        <table>
-          {
-            this.props.items.forEach( (item, i) => {
-              return <TableRow
-                        name={ item.name }
-                        price={ item.price }
-                        removeItem={ this.props.removeItem }
-                        id={ i } />
-            })
-          }
-        </table>
-      </div>
-      )
+
+  let total = 0
+  return (
+    <div id='cart-table'>
+      <table>
+        <tr>
+          <th>Pony</th>
+          <th>Price</th>
+          <th></th>
+        </tr>
+        {
+          this.props.items.map( (item, i) => {
+            total += item.price
+            return <TableRow
+                      name={ item.name }
+                      price={ item.price }
+                      url={ item.url }
+                      removeItem={ this.props.removeItem }
+                      id={ i } />
+          })
+        }
+        <tr><td>Total: </td><td>${ total }</td><td></td></tr>
+      </table>
+    </div>
+    )
   }
 }
 
