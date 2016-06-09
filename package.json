@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "babel-node index.js",
+    "build": "watchify src/app.jsx -t babelify -o public/js/bundle.js -g uglifyify -dv",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,7 +17,8 @@
   "license": "ISC",
   "babel": {
     "presets": [
-      "es2015"
+      "es2015",
+      "react"
     ]
   },
   "bugs": {
@@ -25,7 +27,12 @@
   "homepage": "https://github.com/hapekituarangi/saddle-up#readme",
   "devDependencies": {
     "babel-core": "^6.9.1",
-    "babel-preset-es2015": "^6.9.0"
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.5.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.0.1",
+    "uglifyify": "^3.0.1",
+    "watchify": "^3.7.0"
   },
   "dependencies": {
     "babel-cli": "^6.9.0",
@@ -36,6 +43,8 @@
     "knex": "^0.11.5",
     "passport": "^0.3.2",
     "passport-facebook": "^2.1.1",
-    "pg": "^5.0.0"
+    "pg": "^5.0.0",
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0"
   }
 }
