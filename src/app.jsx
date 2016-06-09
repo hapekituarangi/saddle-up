@@ -33,9 +33,11 @@ class App extends Component {
   }
 
   addToCart(item) {
+    console.log("in the addtocart function")
     let cart = this.state.cart
     cart.push(item)
     this.setState({cart: cart})
+    console.log(this.state.cart, "this is in the cart")
   }
 
   removeItem(index) {
