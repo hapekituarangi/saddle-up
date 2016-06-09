@@ -1,0 +1,1 @@
+console.error("SyntaxError: /Users/apprentice/workspace/roa/saddle-up/src/app.jsx: Unexpected token (52:3) while parsing file: /Users/apprentice/workspace/roa/saddle-up/src/app.jsx");
