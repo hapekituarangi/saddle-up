@@ -13,6 +13,7 @@ export default class CartCounter extends React.Component {
           { this.props.areThereItemsInCart ?
               <p> {this.props.numberOfCartItems.length} Cart </p> : null
           }
+          <img src="http://www.iconsdb.com/icons/preview/deep-pink/shopping-bag-xxl.png/>"/>
 
         </div>
 
