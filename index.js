@@ -4,7 +4,7 @@ import dotenv from 'dotenv'
 import express from 'express'
 import http from 'http'
 import bodyParser from 'body-parser'
-import KnexOptions from '../knexfile.js'
+import KnexOptions from './knexfile.js'
 import Knex from 'knex'
 import session from 'express-session'
 import KnexSessionStore from 'connect-session-knex'
@@ -19,8 +19,8 @@ const knex = Knex(KnexOptions[process.env.NODE_ENV])
 const app = express()
 const server = http.createServer(app)
 const db = DB(knex)
-KnexSessionStore = KnexSessionStore(session)
-const store = new KnexSessionStore({ knex: knex })
+const sessionStore = KnexSessionStore(session)
+const store = new sessionStore({ knex: knex })
 
 app.use(express.static(__dirname + '/public'))
 

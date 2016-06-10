@@ -7,8 +7,8 @@ export default class Login extends React.Component {
     render() {
        return (
         <div>
-          <button>Login as yourself</button>
-          <button>Login as Guest</button>
+          <a href="/auth/fb"><button>Login as yourself</button></a>
+          <a href="#"><button>Login as Guest</button></a>
         </div>
 
         )
