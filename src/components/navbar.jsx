@@ -8,17 +8,15 @@ console.log("navbar is loaded")
 export default class Navbar extends React.Component {
 
     render() {
-
-
         return(
             <div className="navbar" >
               <WelcomeUser
-                loggedIn={ this.props.loggedIn }/>
+                userName={ (this.props.user) ? this.props.user.name : 'Guest' }/>
               <CartCounter
                 numberOfCartItems={ this.props.numberOfCartItems }
                 areThereItemsInCart={this.props.areThereItemsInCart} />
               <Login
-                loggedIn={ this.props.loggedIn }  />
+                user={ this.props.user }  />
             </div>
         )
     }
