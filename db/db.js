@@ -1,31 +1,30 @@
 'use strict'
 
-import KnexOptions from '../knexfile.js'
-import Knex from 'knex'
+export default (knex) => {
 
-const knex = Knex(KnexOptions.development)
+  return {
 
-export default {
+    getProducts: () => {
+      return knex('products')
+        .then((rows) => {
+          return { products: rows }
+        })
+    },
 
-  getProducts: () => {
-    return knex('products')
-      .then((rows) => {
-        return { products: rows }
-      })
-  },
+    getUsers: () => {
+      return knex('users')
+        .then((rows) => {
+          return { users: rows }
+        })
+    },
 
-  getUsers: () => {
-    return knex('users')
-      .then((rows) => {
-        return { users: rows }
-      })
-  },
+    getAddOns: () => {
+      return knex('addOns')
+        .then((rows) => {
+          return { addOns: rows }
+        })
+    }
 
-   getAddOns: () => {
-    return knex('addOns')
-      .then((rows) => {
-        return { addOns: rows }
-      })
   }
 
 }
