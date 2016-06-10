@@ -12,7 +12,7 @@ class CartTable extends Component {
   return (
     <div id='cart-table'>
       <table>
-        <tr>
+        <tr id='title-row'>
           <th>Pony</th>
           <th>Price</th>
           <th></th>
@@ -28,7 +28,7 @@ class CartTable extends Component {
                       id={ i } />
           })
         }
-        <tr><td>Total: </td><td>${ total }</td><td></td></tr>
+        <tr><td> </td><td className='cart-price'>Total: ${ total }</td><td></td></tr>
       </table>
     </div>
     )
