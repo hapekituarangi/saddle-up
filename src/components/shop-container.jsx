@@ -37,7 +37,7 @@ class ShopContainer extends Component {
 
   render() {
     return (
-      <div>
+      <div className='container'>
           <Shop
             shopItems={ this.props.shopItems }
             addToCart={ this.props.addToCart }
