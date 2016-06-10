@@ -11,7 +11,7 @@ class MoreDetails extends Component {
     this.props.addToCart(this.props.item)
     this.props.updateCurrentItem(this.props.item)
     this.props.noDetails()
-    //**.scrollIntoView(false)
+    document.getElementById('confirmation').scrollIntoView(false)
   }
 
   render() {

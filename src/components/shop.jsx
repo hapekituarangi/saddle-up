@@ -8,7 +8,7 @@ export default class Shop extends React.Component {
 
   render() {
     return (
-      <section id='shop' ref='shop'>
+      <section id='shop'>
         <div className="shop">
           <Title id='shop-title' title='A most grand selection of ponies' />
           <Shelf addToCart={this.props.addToCart}

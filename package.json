@@ -39,6 +39,7 @@
     "babel-cli": "^6.9.0",
     "body-parser": "^1.15.1",
     "dotenv": "^2.0.0",
+    "element-scroll-to": "^1.1.0",
     "express": "^4.13.4",
     "express-session": "^1.13.0",
     "jquery": "^3.0.0",

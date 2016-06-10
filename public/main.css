@@ -48,6 +48,11 @@ h2 {
   justify-content: space-around;
 }
 
+/* --------- SECTIONS SCROLLING ---------- */
+#shopping-cart, #confirmation, #shop {
+  padding: 20%;
+}
+
 /* ------------------Shop components' style --------- */
 .container {
   position: relative;
@@ -113,9 +118,6 @@ h2 {
 }
 
 /* -----------------------  Confirm Add --------------------- */
-#confirm-add-cart {
-  margin-bottom: 40%;
-}
 
 #confirm-btns {
   text-align: center;
@@ -138,7 +140,7 @@ h2 {
 
 /* ------------------ Checkout table styling ------------- */
 #cart {
-  margin-bottom: 300px;
+  margin-bottom: 40%;
 }
 
 .checkout-img {
