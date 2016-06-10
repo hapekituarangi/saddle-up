@@ -30,13 +30,29 @@ class App extends Component {
       home: false
     })
     console.log(this.state.cart)
-
+    this.updateServerCart()
   }
 
   removeItem(index) {
     let cart = this.state.cart
     let removed = cart.splice(index, 1)
     this.setState({cart: cart, home: false})
+    this.updateServerCart()
+  }
+
+  updateServerCart() {
+    $.ajax({
+      type: 'POST',
+      url: 'api/update-cart',
+      async: true,
+      data: { cart: this.state.cart },
+      success: (response) => {
+        console.log("updated server cart", response)
+      },
+      error: (response) => {
+        console.log("error updating server cart", response)
+      }
+    })
   }
 
   enterSite() {
@@ -52,10 +68,16 @@ class App extends Component {
       success: (response) => {
         console.log('app.jsx componentWillMount ajax user response recieved')
         console.log(response)
-        this.setState({
-          user: (response.user) ? response.user : null,
-          home: (response.user) ? false : true
-        })
+        let stateUpdate = {}
+        if (response.user) {
+          stateUpdate.user = response.user
+          stateUpdate.home = false
+        }
+        if (response.cart) {
+          stateUpdate.cart = response.cart
+          stateUpdate.areThereItemsInCart = true
+        }
+        this.setState(stateUpdate)
       },
       error: (response) => {
         console.log('app.jsx componentWillMount ajax user error recieved')

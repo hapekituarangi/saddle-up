@@ -67,7 +67,8 @@ app.get('/api/user', (req, res) => {
   res.json((req.session.passport && req.session.passport.user) ? {
     user: {
       name: req.session.passport.user.name
-    }
+    },
+    cart: req.session.cart
   } : {})
 })
 
@@ -85,6 +86,13 @@ app.get('/api/addons', (req, res) => {
     .then((addOns) => {
       res.json(addOns)
     })
+})
+
+app.post('/api/update-cart', (req, res) => {
+  console.log('POST /api/update-cart')
+  console.log(req.body)
+  req.session.cart = req.body.cart
+  res.json( {} )
 })
 
 app.get('/auth/fb',
