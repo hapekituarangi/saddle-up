@@ -11,12 +11,12 @@ class App extends Component {
     this.addToCart = this.addToCart.bind(this)
     this.removeItem = this.removeItem.bind(this)
     this.enterSite = this.enterSite.bind(this)
-    this.doLoggingIn = this.doLoggingIn.bind(this)
     this.state = {
       products: [],
       cart: [],
       areThereItemsInCart: false,
-      home: true
+      home: true,
+      user: null
     }
   }
 
@@ -27,8 +27,7 @@ class App extends Component {
     this.setState({
       cart: cart,
       areThereItemsInCart: true,
-      home: false,
-      loggedIn: false
+      home: false
     })
     console.log(this.state.cart)
 
@@ -44,23 +43,35 @@ class App extends Component {
     this.setState({cart: [], home: false})
   }
 
-  doLoggingIn () {
-
-    console.log('trying to log in')
-  }
-
   componentWillMount () {
     console.log('app.jsx componentWillMount called')
+    $.ajax({
+      type: 'GET',
+      url: 'api/user',
+      async: true,
+      success: (response) => {
+        console.log('app.jsx componentWillMount ajax user response recieved')
+        console.log(response)
+        this.setState({
+          user: (response.user) ? response.user : null,
+          home: (response.user) ? false : true
+        })
+      },
+      error: (response) => {
+        console.log('app.jsx componentWillMount ajax user error recieved')
+        console.log(response)
+      }
+    })
     $.ajax({
       type: 'GET',
       url: 'api/products',
       async: true,
       success: (response) => {
-        console.log('app.jsx componentWillMount ajax response recieved')
+        console.log('app.jsx componentWillMount ajax products response recieved')
         this.setState(response)
       },
       error: (response) => {
-        console.log('app.jsx componentWillMount ajax error recieved')
+        console.log('app.jsx componentWillMount ajax products error recieved')
         console.log(response)
       }
     })
@@ -76,8 +87,7 @@ class App extends Component {
           <Home enterSite={ this.enterSite }/>
         </div> : <div>
           <Navbar
-            loggedIn={ this.state.loggedIn }
-            doLoggingIn={ this.doLoggingIn }
+            user={ this.state.user }
             numberOfCartItems={ this.state.cart }
             areThereItemsInCart={this.state.areThereItemsInCart}/>
           <ShopContainer

@@ -13,3 +13,5 @@ jspm_packages
 
 # ignore script built bundle file
 public/js/bundle.js
+
+npm-debug.log

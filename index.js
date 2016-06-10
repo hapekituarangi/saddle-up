@@ -39,15 +39,18 @@ passport.use(new FaceBookStrategy({
     clientSecret: process.env.FACEBOOK_APP_SECRET,
     callbackURL: 'http://localhost:3000/auth/fb/cb'
   }, (accessToken, refreshToken, profile, callback) => {
+    console.log('FaceBookStrategy callback', profile)
     return callback(null, profile)
   })
 )
 
 passport.serializeUser((user, callback) => {
-  callback(null, user)
+  console.log('serializeUser', user)
+  callback(null, { facebookId: user.id, name: user.displayName })
 })
 
 passport.deserializeUser((obj, callback) => {
+  console.log('deserializeUser', obj)
   callback(null, obj)
 })
 
@@ -57,6 +60,15 @@ app.use(passport.session())
 app.get('/', (req, res) => {
   console.log('GET /')
   res.sendFile(__dirname + '/public/index.html')
+})
+
+app.get('/api/user', (req, res) => {
+  console.log('GET /api/user')
+  res.json((req.session.passport && req.session.passport.user) ? {
+    user: {
+      name: req.session.passport.user.name
+    }
+  } : {})
 })
 
 app.get('/api/products', (req, res) => {
