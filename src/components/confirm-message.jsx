@@ -3,7 +3,10 @@ import React, { Component } from 'react'
 class ConfirmMessage extends Component {
   render() {
     return (
-      <h2>Congratulations! {this.props.item.name } has been added to your cart</h2>
+      <div>
+        <h2 id='confirm-message'>Congratulations!</h2>
+        <h2>{this.props.item.name } has been added to your cart</h2>
+      </div>
       )
   }
 }
