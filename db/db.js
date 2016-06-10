@@ -14,10 +14,17 @@ export default {
       })
   },
 
-  getUser: () => {
+  getUsers: () => {
     return knex('users')
       .then((rows) => {
         return { users: rows }
+      })
+  },
+
+   getAddOns: () => {
+    return knex('addOns')
+      .then((rows) => {
+        return { addOns: rows }
       })
   }
 

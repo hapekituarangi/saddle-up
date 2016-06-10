@@ -24,7 +24,7 @@ exports.seed = function(knex, Promise) {
     knex('products').insert({
       name: 'Bumblebee',
       price: 10000.00,
-      url: 'http://vignette2.wikia.nocookie.net/transformers/im ages/b/bf/Wfc-bumblebee-1.jpg/revision/latest?cb=20111031135557',
+      url: 'https://www.sideshowtoy.com/wp-content/uploads/2014/12/902315-product-silo.png',
       age: 'Young at heart' ,
       breed: 'Beetle' ,
       description: 'Bumblebee has a delightful personality and can always be relied upon to go the extra mile for you. Which is really good when travelling by pony.'

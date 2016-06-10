@@ -3,36 +3,7 @@ import ReactDOM from 'react-dom'
 import ShopContainer from './components/shop-container.jsx'
 import Navbar from './components/navbar.jsx'
 import Home from './home.jsx'
-
-const products = [
-              {id: 0,
-              name: 'Optimus Prime',
-              price: 80000,
-              url: 'http://tfwiki.net/mediawiki/images2/thumb/3/37/Optimusg1.jpg/350px-Optimusg1.jpg',
-              age: '6 million years',
-              breed: 'Truck',
-              description: 'Optimus Prime is the leader of all the ponies. He is wise and kind, but ruthless when he needs to be. He is great with children.'},
-              {id: 1,
-              name: 'Megatron',
-              price: 9000,
-              url: 'http://img11.deviantart.net/a55f/i/2011/025/b/5/megatron_g1_by_alexdobson-d380thy.jpg',
-              age: 'Millions and millions of years',
-              breed: 'Evil',
-              description: 'Megatron can be a bit temperatmental so is only recommended for experienced riders. In saying that, if you give him a good scratch then he will destroy the world for you.'},
-              {id: 2,
-              name: 'Bumblebee',
-              price: 10000,
-              url: 'http://vignette2.wikia.nocookie.net/transformers/images/b/bf/Wfc-bumblebee-1.jpg/revision/latest?cb=20111031135557',
-              age: 'Young at heart',
-              breed: 'Beetle',
-              description: 'Bumblebee has a delightful personality and can always be relied upon to go the extra mile for you. Which is really good when travelling by pony.'},
-              {id: 3,
-              name: 'Starscream',
-              price: 4000,
-              url: 'http://static.zerochan.net/Starscream.full.636078.jpg',
-              age: '30 years',
-              breed: 'Fighter Jet',
-              description: 'Starscream is a real handful. You will need to be extrememly firm with him if you are to control him. Also thinks he can fly, which is mildly terrifying.'}]
+import $ from 'jquery'
 
 class App extends Component {
   constructor(props) {
@@ -42,6 +13,7 @@ class App extends Component {
     this.enterSite = this.enterSite.bind(this)
     this.doLoggingIn = this.doLoggingIn.bind(this)
     this.state = {
+      products: [],
       cart: [],
       areThereItemsInCart: false,
       home: true
@@ -77,8 +49,24 @@ class App extends Component {
     console.log('trying to log in')
   }
 
+  componentWillMount () {
+    console.log('app.jsx componentWillMount called')
+    $.ajax({
+      type: 'GET',
+      url: 'api/products',
+      async: true,
+      success: (response) => {
+        console.log('app.jsx componentWillMount ajax response recieved')
+        this.setState(response)
+      },
+      error: (response) => {
+        console.log('app.jsx componentWillMount ajax error recieved')
+        console.log(response)
+      }
+    })
+  }
+
   render() {
-    var shopItems = products
 
     return (
       <div>
@@ -93,7 +81,7 @@ class App extends Component {
             numberOfCartItems={ this.state.cart }
             areThereItemsInCart={this.state.areThereItemsInCart}/>
           <ShopContainer
-              shopItems={ shopItems }
+              shopItems={ this.state.products }
               addToCart={ this.addToCart }
               removeItem={ this.removeItem }
               cartItems={ this.state.cart } />
