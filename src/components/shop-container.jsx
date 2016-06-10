@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Cart from './cart.jsx'
+import PurchaseForm from './purchase-form.jsx'
 
 import Shop from './shop.jsx'
 import ConfirmAddCart from  './confirm-add-cart.jsx'
@@ -44,6 +45,7 @@ class ShopContainer extends Component {
             updateCurrentItem={ this.updateCurrentItem } />
           <ConfirmAddCart item={ this.state.currentItem } addOns={ buyAddOns }/>
           <Cart items={ this.props.cartItems } removeItem={ this.props.removeItem } />
+          <PurchaseForm/>
         </div>
       )
   }
