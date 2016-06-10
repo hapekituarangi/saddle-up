@@ -10,7 +10,7 @@ export default class PurchaseForm extends React.Component {
       <div className="purchase-form">
 
         <form className="form-container">
-          <h2>Mailing address</h2>
+          <h2>Address</h2>
 
           <label for="street">Street</label>
           <input
@@ -53,7 +53,29 @@ export default class PurchaseForm extends React.Component {
             className="purchase-form-input phone"
             type="text"
             placeholder="Enter contact phone number" />
-           
+
+           <h2>Give me the money</h2>  
+           <label for="card-name">Card Name</label>    
+           <input
+             name="money"
+             className="purchase-form-input card-name"
+             type="text"
+             placeholder="Enter name on card" />
+
+            <label for="card-number">Card Number</label>    
+            <input
+              name="money"
+              className="purchase-form-input card-number"
+              type="text"
+              placeholder="Enter card number" />
+
+           <label for="card-secret">That secret number on the back</label>    
+           <input
+             name="money"
+             className="purchase-form-input card-secret"
+             type="text"
+             placeholder="Enter secret number thing" />
+             
            <input id="button" type="submit" value="Purchase" />
         </form>
       </div>
