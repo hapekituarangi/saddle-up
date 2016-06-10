@@ -49,7 +49,9 @@ class ShopContainer extends Component {
             shopItems={ this.props.shopItems }
             addToCart={ this.props.addToCart }
             updateCurrentItem={ this.updateCurrentItem } />
-          <ConfirmAddCart item={ this.state.currentItem } addOns={ this.state.buyAddOns }/>
+          <ConfirmAddCart item={ this.state.currentItem }
+                          addToCart={ this.props.addToCart }
+                          addOns={ this.state.buyAddOns }/>
           <Cart items={ this.props.cartItems } removeItem={ this.props.removeItem } />
         </div>
       )

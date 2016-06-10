@@ -8,7 +8,7 @@ class ConfirmAddCart extends Component {
       <section id='confirmation'>
         <div id='confirm-add-cart'>
           <ConfirmMessage item={ this.props.item }/>
-          <AddOns addOns={ this.props.addOns }/>
+          <AddOns addOns={ this.props.addOns } addToCart={ this.props.addToCart }/>
           <div id='confirm-btns'>
             <button>Continue shopping</button>
             <button>Go to checkout</button>
