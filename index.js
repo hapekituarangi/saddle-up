@@ -24,6 +24,15 @@ app.get('/api/products', (req, res) => {
     })
 })
 
+app.get('/api/addons', (req, res) => {
+  console.log('GET /api/addons')
+  db.getAddOns()
+    .then((addOns) => {
+      res.json(addOns)
+    })
+})
+
+
 server.listen(3000, () => {
   console.log('Server is listening on port 3000')
 })

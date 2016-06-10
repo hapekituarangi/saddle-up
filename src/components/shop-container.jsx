@@ -1,37 +1,44 @@
 import React, { Component } from 'react'
 import Cart from './cart.jsx'
-
 import Shop from './shop.jsx'
 import ConfirmAddCart from  './confirm-add-cart.jsx'
-
-const buyAddOns = [
-                {type: 'Chocolate',
-                price: 5.00,
-                url: 'http://www.mexatk.com/wp-content/uploads/2016/03/%D8%B5%D9%88%D8%B1-%D8%B4%D9%88%D9%83%D9%88%D9%84%D8%A7%D8%AA%D9%87-3.jpg'},
-                {type: 'Champagne',
-                price: 90.00,
-                url: 'http://www.pd4pic.com/images/-champagne-sparkling-wine-bottle-wine-feast-festive.png'}
-                ]
-const rentAddOns = [
-                {type: 'Reins',
-                price: 50.00,
-                url: ''},
-                {type: 'hay',
-                price: 15.00,
-                url: ''}
-                ]
+import $ from 'jquery'
 
 class ShopContainer extends Component {
   constructor(props) {
     super(props)
     this.updateCurrentItem = this.updateCurrentItem.bind(this)
     this.state = {
+      buyAddOns: [],
+      rentAddOns: [],
       currentItem: {}
     }
   }
 
   updateCurrentItem(item) {
     this.setState({currentItem: item})
+  }
+
+  componentWillMount () {
+    console.log('shop-container.jsx componentWillMount called')
+    $.ajax({
+      type: 'GET',
+      url: 'api/addons',
+      async: true,
+      success: (response) => {
+        console.log('shop-container.jsx componentWillMount ajax response recieved')
+        let buy = response.addOns.filter((addOn) => (addOn.rentOrBuy === 'buy'))
+        let rent = response.addOns.filter((addOn) => (addOn.rentOrBuy === 'rent'))
+        this.setState({
+          buyAddOns: buy,
+          rentAddOns: rent
+        })
+      },
+      error: (response) => {
+        console.log('shop-container.jsx componentWillMount ajax error recieved')
+        console.log(response)
+      }
+    })
   }
 
 
@@ -42,7 +49,7 @@ class ShopContainer extends Component {
             shopItems={ this.props.shopItems }
             addToCart={ this.props.addToCart }
             updateCurrentItem={ this.updateCurrentItem } />
-          <ConfirmAddCart item={ this.state.currentItem } addOns={ buyAddOns }/>
+          <ConfirmAddCart item={ this.state.currentItem } addOns={ this.state.buyAddOns }/>
           <Cart items={ this.props.cartItems } removeItem={ this.props.removeItem } />
         </div>
       )
