@@ -46,24 +46,50 @@ h2 {
   z-index: 10;
   display: flex;
   justify-content: space-around;
+  font-size: 20px;
 }
 
+#cart-icon {
+ width: 50px;
+}
+
+
 /* --------- SECTIONS SCROLLING ---------- */
-#shopping-cart, #confirmation, #shop {
-  padding: 20%;
+#shopping-cart, #confirmation-of-add, #shop {
+  padding: 10%;
+}
+
+#shop{
+  margin-top: 40px;
+}
+
+#confirmation-of-add {
+  padding-bottom: 20%;
+}
+
+=======
+
+#cart-counter {
+  display: inline;
+}
+#cart-counter-counter {
+  display: inline;
+}
+#app > div > div > div.navbar > div:nth-child(3) > a > button{
+  font-size: 20px;
 }
 
 /* ------------------Shop components' style --------- */
 .container {
   position: relative;
-  margin-top: 100px;
 }
+
 
 .shop {
   width: 100%;
   height: 100%;
   text-align: left;
-  margin-bottom: 40%;
+  margin-bottom: 30%;
 }
 
 .shop-shelf {
@@ -105,12 +131,18 @@ h2 {
 }
 
 .pony-details {
+  display: flex;
+  justify-content: space-between;
   font-size: 1rem;
   color: #751296;
   padding: 15px 30px;
   word-break: normal;
   border-radius: 4px;
   background-color: rgba(256, 256, 256, .9);
+}
+
+.description {
+  width: 40%;
 }
 
 #no-details {
@@ -121,6 +153,10 @@ h2 {
 
 #confirm-btns {
   text-align: center;
+}
+
+#confirm-message {
+  font-size: 60px;
 }
 
 .add-ons, .addOn {
@@ -154,14 +190,14 @@ h2 {
 
 table, th, td {
   color: #751296;
-  border: 2px solid #ddd;
   text-align: left;
   background-color: rgba(256, 256, 256, .3)
 }
 
 table {
   border-collapse: collapse;
-  width: 60%;
+  width: 100%;
+  border-radius: 4px;
 }
 
 th, td {
@@ -176,6 +212,14 @@ td {
   font-size: 30px;
 }
 
+#title-row{
+  border-bottom: 2px solid #fff;
+}
+
+.cart-price {
+  text-align: right;
+}
+
 #remove {
   text-align: center;
   width: 40px;
@@ -184,6 +228,7 @@ td {
 
 button {
   color:#751296;
+  font-size: 20px;
   margin: 10px;
   padding: 10px 20px;
   background-color: #fff;
@@ -206,15 +251,20 @@ button:hover, .more-details:hover {
 /* purchase form styling */
 
 .purchase-form-input{
-  margin-bottom: 20px;
+  padding: 15px;
+  margin-bottom: 30px;
+  border-radius: 7px;
   font-size: 20px;
 
 }
-.purchase-form {
+#purchase-form {
   width: 100%;
   height: 100%;
   text-align: left;
   margin-bottom: 40%;
+  display: flex;
+  justify-content: center;
+
 
 
 }
@@ -233,14 +283,18 @@ button:hover, .more-details:hover {
     background-color: #fff;
     border: 2px solid #751296;
     border-radius: 4px;
+    font-size: 20px;
+    height: 60px;
+    width: 200px;
+
 }
 
-.confirmation {
+#confirmation {
   width: 100%;
   height: 100%;
   text-align: center;
   margin-bottom: 40%;
 
-  font-size: 20px
+  font-size: 60px
 }
 

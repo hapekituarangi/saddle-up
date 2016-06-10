@@ -9,6 +9,10 @@ class Cart extends Component {
     super(props)
   }
 
+  handleClick() {
+    document.getElementById('purchase-form').scrollIntoView()
+  }
+
   render() {
     return (
       <section id='shopping-cart'>

@@ -9,12 +9,12 @@ class ConfirmAddCart extends Component {
   }
 
   handleGoCheckout() {
-    document.getElementById('cart').scrollIntoView()
+    document.getElementById('shopping-cart').scrollIntoView()
   }
 
   render() {
     return (
-      <section id='confirmation'>
+      <section id='confirmation-of-add'>
         <div id='confirm-add-cart'>
           <ConfirmMessage item={ this.props.item }/>
           <AddOns addOns={ this.props.addOns } addToCart={ this.props.addToCart }/>

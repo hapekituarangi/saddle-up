@@ -9,11 +9,12 @@ export default class CartCounter extends React.Component {
       console.log(this.props.areThereItemsInCart, "should be false")
 
        return (
-        <div className="cart-counter">
+        <div id="cart-counter">
           { this.props.areThereItemsInCart ?
-              <p> {this.props.numberOfCartItems.length} Cart </p> : null
+              <div id="cart-counter-counter"> {this.props.numberOfCartItems.length} </div> : null
           }
-          <img src="http://www.iconsdb.com/icons/preview/deep-pink/shopping-bag-xxl.png"/>
+
+          <img id="cart-icon" src="https://openclipart.org/image/2400px/svg_to_png/229937/shoppingbag3.png"/>
 
         </div>
 
