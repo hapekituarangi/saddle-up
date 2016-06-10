@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import Cart from './cart.jsx'
+import PurchaseForm from './purchase-form.jsx'
 import Shop from './shop.jsx'
 import ConfirmAddCart from  './confirm-add-cart.jsx'
+import Confirmation from  './confirmation.jsx'
 import $ from 'jquery'
 
 class ShopContainer extends Component {
@@ -44,13 +46,17 @@ class ShopContainer extends Component {
 
   render() {
     return (
-      <div>
+      <div className='container'>
           <Shop
             shopItems={ this.props.shopItems }
             addToCart={ this.props.addToCart }
             updateCurrentItem={ this.updateCurrentItem } />
-          <ConfirmAddCart item={ this.state.currentItem } addOns={ this.state.buyAddOns }/>
+          <ConfirmAddCart item={ this.state.currentItem }
+                          addToCart={ this.props.addToCart }
+                          addOns={ this.state.buyAddOns }/>
           <Cart items={ this.props.cartItems } removeItem={ this.props.removeItem } />
+          <PurchaseForm/>
+          <Confirmation />
         </div>
       )
   }
