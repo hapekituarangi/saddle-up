@@ -11,13 +11,15 @@ class Cart extends Component {
 
   render() {
     return (
-      <div id='cart'>
-        <Title title='Shopping Cart' />
-        <div >
-          <CartTable items={ this.props.items } removeItem={ this.props.removeItem }/>
+      <section id='shopping-cart'>
+        <div id='cart'>
+          <Title title='Shopping Cart' />
+          <div >
+            <CartTable items={ this.props.items } removeItem={ this.props.removeItem }/>
+          </div>
+          <button onClick={ this.handleClick }>Confirm Purchase</button>
         </div>
-        <button onClick={ this.handleClick }>Confirm Purchase</button>
-      </div>
+      </section>
       )
   }
 }

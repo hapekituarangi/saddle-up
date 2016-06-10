@@ -11,6 +11,7 @@ class MoreDetails extends Component {
     this.props.addToCart(this.props.item)
     this.props.updateCurrentItem(this.props.item)
     this.props.noDetails()
+    //**.scrollIntoView(false)
   }
 
   render() {
@@ -22,7 +23,7 @@ class MoreDetails extends Component {
         <p>AGE: { this.props.details.age }</p>
         <p>{ this.props.details.description }</p>
         <div id='add-cart-btn'>
-          <button onClick={ this.handleAdd.bind(this) } >Add to cart</button>
+          <button onClick={ this.handleAdd.bind(this) }>Add to cart</button>
         </div>
       </div>
     )

@@ -8,12 +8,14 @@ export default class Shop extends React.Component {
 
   render() {
     return (
-      <div className="shop">
-        <Title id='shop-title' title='A most grand selection of ponies' />
-        <Shelf addToCart={this.props.addToCart}
-               updateCurrentItem={ this.props.updateCurrentItem }
-               theseItems={this.props.shopItems} />
-      </div>
+      <section id='shop' ref='shop'>
+        <div className="shop">
+          <Title id='shop-title' title='A most grand selection of ponies' />
+          <Shelf addToCart={this.props.addToCart}
+                 updateCurrentItem={ this.props.updateCurrentItem }
+                 theseItems={this.props.shopItems} />
+        </div>
+      </section>
     )
   }
 };
