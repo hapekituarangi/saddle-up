@@ -19,7 +19,7 @@ class TableRow extends Component {
             <img className='checkout-img' src={ this.props.url } />
           </div>
         </td>
-        <td>${ this.props.price }</td>
+        <td className='cart-price'>${ this.props.price }</td>
         <td onClick={ this.handleClick } id='remove'>X</td>
       </tr>
       )
